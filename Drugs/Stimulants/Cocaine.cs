@@ -22,6 +22,8 @@ namespace UnknownDrugs.Drugs
 
         public override float InjectionSickness => 0.3f;
 
+        public override float InteractionSeconds(float ml) => 120f;
+
         protected override float SecondsPerHundredMl => 60f;
 
         public override DrugText Text { get; } = new DrugText(

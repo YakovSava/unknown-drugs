@@ -1,0 +1,7 @@
+F:\AnotherProjects\mods\UnknownDrugs\bin\Release\net472\UnknownDrugs.dll
+F:\AnotherProjects\mods\UnknownDrugs\bin\Release\net472\UnknownDrugs.pdb
+F:\AnotherProjects\mods\UnknownDrugs\obj\Release\net472\UnknownDrugs.csproj.AssemblyReference.cache
+F:\AnotherProjects\mods\UnknownDrugs\obj\Release\net472\UnknownDrugs.GeneratedMSBuildEditorConfig.editorconfig
+F:\AnotherProjects\mods\UnknownDrugs\obj\Release\net472\UnknownDrugs.csproj.CoreCompileInputs.cache
+F:\AnotherProjects\mods\UnknownDrugs\obj\Release\net472\UnknownDrugs.dll
+F:\AnotherProjects\mods\UnknownDrugs\obj\Release\net472\UnknownDrugs.pdb

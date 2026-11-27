@@ -25,9 +25,13 @@ namespace UnknownDrugs.Core
 
         public virtual bool IsLethalForCans => false;
 
+        public virtual bool IsCraftOnly => false;
+
         public virtual float InjectionGangreneChance => 0f;
 
         public virtual IReadOnlyList<string> ActiveEffectIds => NoEffects;
+
+        public virtual float InteractionSeconds(float ml) => 300f;
 
         public abstract void Apply(float ml, Body body);
     }

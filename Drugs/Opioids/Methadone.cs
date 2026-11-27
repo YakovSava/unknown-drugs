@@ -18,6 +18,8 @@ namespace UnknownDrugs.Drugs
 
         public override float InjectionSickness => 0.3f;
 
+        public override float InteractionSeconds(float ml) => 900f;
+
         public override DrugText Text { get; } = new DrugText(
             "Methadone",
             "Synthetic opioid created in Germany in the late 1930s. Acts slowly and for a long time, doses pile up on top of each other. Wait before taking more.",

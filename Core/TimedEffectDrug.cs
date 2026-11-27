@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace UnknownDrugs.Core
 {
@@ -9,6 +10,11 @@ namespace UnknownDrugs.Core
         public abstract string EffectId { get; }
 
         public override IReadOnlyList<string> ActiveEffectIds => new[] { EffectId };
+
+        public override float InteractionSeconds(float ml)
+        {
+            return Mathf.Max(30f, SecondsPerHundredMl * ml * 0.01f);
+        }
 
         protected abstract float SecondsPerHundredMl { get; }
 

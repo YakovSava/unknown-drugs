@@ -31,10 +31,10 @@ namespace UnknownDrugs.Drugs
         protected override PhraseSet Phrases => TripPhrases;
 
         public override DrugText Text { get; } = new DrugText(
-            "Psilocybin",
-            "Compound of certain mushrooms, isolated by Albert Hofmann in 1958. The stomach revolts first, then the colors arrive.",
-            "Псилоцибин",
-            "Вещество некоторых грибов, выделенное Альбертом Хофманом в 1958 году. Сначала бунтует желудок, потом приходят краски.");
+            "Psilocybe",
+            "A brew made from Psilocybe fungus and Bio-Chem Fluid, far stronger than the mushroom alone. The stomach revolts first, then the colors arrive.",
+            "Псилоцибе",
+            "Настой из гриба псилоцибе и биохимической жидкости, гораздо сильнее самого гриба. Сначала бунтует желудок, потом приходят краски.");
 
         protected override void OnImmediate(float ml, Body body)
         {

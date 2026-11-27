@@ -17,6 +17,8 @@ namespace UnknownDrugs.Drugs
 
         public override float ValuePerLiter => 110f;
 
+        public override float InteractionSeconds(float ml) => 600f;
+
         public override DrugText Text { get; } = new DrugText(
             "Buprenorphine",
             "Partial opioid agonist from the late 1960s. Its effect has a ceiling, so it is hard to overdose on. It also pushes stronger opioids out and can throw you into sudden withdrawal.",

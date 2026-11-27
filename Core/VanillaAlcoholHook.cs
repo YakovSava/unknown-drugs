@@ -19,6 +19,7 @@ namespace UnknownDrugs.Core
             {
                 original(ml, body);
                 body.GetOrAddComponent<Intoxication>().Add(Intoxication.PointsFor(ml, AssumedStrength));
+                SubstanceTracker.Mark(body, AlcoholId, 300f);
             };
         }
     }

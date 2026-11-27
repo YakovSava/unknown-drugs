@@ -16,6 +16,8 @@ namespace UnknownDrugs.Drugs
 
         public override float ValuePerLiter => 50f;
 
+        public override float InteractionSeconds(float ml) => 600f;
+
         public override DrugText Text { get; } = new DrugText(
             "Codeine",
             "Natural opium alkaloid, isolated in 1832. The body converts part of it into morphine, so the relief arrives with a delay.",

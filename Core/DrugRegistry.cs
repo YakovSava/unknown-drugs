@@ -16,11 +16,13 @@ namespace UnknownDrugs.Core
             foreach (Drug drug in Drugs)
             {
                 Liquids.Registry[drug.Id] = CreateLiquidType(drug);
-                if (drug.IsLethalForCans && !Liquids.DangerList.Contains(drug.Id))
+                if ((drug.IsLethalForCans || drug.IsCraftOnly)
+                    && !Liquids.DangerList.Contains(drug.Id))
                 {
                     Liquids.DangerList.Add(drug.Id);
                 }
             }
+            VanillaSubstanceHook.Install();
             VanillaAlcoholHook.Install();
         }
 
@@ -60,7 +62,17 @@ namespace UnknownDrugs.Core
                 new Antifreeze(),
                 new FowlersSolution(),
                 new StrychnineTonic(),
-                new Radithor()
+                new Radithor(),
+                new Trazodone(),
+                new Desmopressin(),
+                new Leptin(),
+                new VasopressinLeptin(),
+                new Mptp(),
+                new Xylazine(),
+                new Goofball(),
+                new Tranq(),
+                new Krokodil(),
+                new Speedball()
             };
             return drugs.Concat(Beverages.Create()).ToList();
         }
@@ -74,10 +86,15 @@ namespace UnknownDrugs.Core
                 valuePerLiter = drug.ValuePerLiter,
                 injectable = drug.Injectable,
                 injectionSickness = drug.InjectionSickness,
-                onDrink = drug.Apply,
+                onDrink = (float ml, Body body) =>
+                {
+                    drug.Apply(ml, body);
+                    SubstanceTracker.Mark(body, drug.Id, drug.InteractionSeconds(ml));
+                },
                 onHealthUse = (float ml, Limb limb) =>
                 {
                     drug.Apply(ml, limb.body);
+                    SubstanceTracker.Mark(limb.body, drug.Id, drug.InteractionSeconds(ml));
                     Gangrene.Roll(limb, drug.InjectionGangreneChance);
                 }
             };

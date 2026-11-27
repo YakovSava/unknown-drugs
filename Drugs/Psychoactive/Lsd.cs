@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnknownDrugs.Effects;
 using UnknownDrugs.Localization;
 
 namespace UnknownDrugs.Drugs
@@ -37,6 +38,7 @@ namespace UnknownDrugs.Drugs
         {
             body.happiness -= 8f;
             body.energy -= 10f;
+            PsychedelicWithdrawal.Start(body, 600f, 1f, WithdrawalFlavor.Lsd);
         }
     }
 }
